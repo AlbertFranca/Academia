@@ -18,6 +18,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/globalcss.css">
         <title>Cadastro Aluno</title>
     </head>
     <body>
@@ -29,9 +30,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
                 </li>
+                <%
+                int x=0;//verificar se usuario tem permissão
+                if (x==0){
+                %>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
                 </li>
+                <%}%>
             </ul>
         </nav>
         <form action="processar.jsp">

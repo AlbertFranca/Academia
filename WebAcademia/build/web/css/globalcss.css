@@ -7,4 +7,10 @@ and open the template in the editor.
     Created on : 8 de set. de 2021, 19:13:45
     Author     : islad
 */
-p {text-align: center; color:blue;}
+
+body {background-image:url(../img/academia.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+} 

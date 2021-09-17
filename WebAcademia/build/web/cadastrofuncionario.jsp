@@ -17,6 +17,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/globalcss.css">
         <title>Cadastro de funcionario</title>
     </head>
     <body>
@@ -41,17 +42,17 @@
 
                         <p> 
                             <label for="nome_cad">Seu nome</label>
-                            <input id="nome_cad" name="nome_cad" type="text" class="form-control" placeholder="ex. nome" required="required" />
+                            <input id="nome" name="nome" type="text" class="form-control" placeholder="ex. nome" required="required" />
                         </p>
 
                         <p> 
                             <label for="email_cad">Seu e-mail</label>
-                            <input id="email_cad" name="email_cad" type="email" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/> 
+                            <input id="email" name="email" type="email" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/> 
                         </p>
 
                         <p> 
                             <label for="senha_cad">Sua senha</label>
-                            <input id="senha_cad" name="senha_cad" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
+                            <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
                         </p>
 
                         <p><strong>Selecione Função</strong></p>
