@@ -138,7 +138,11 @@
 Observações
                     </textarea><br> 
                 </div>
-                <input type="submit" value="Cadastrar" /> 
+                <div class="col-sm-3">
+                    <label for="senha">Sua senha</label>
+                    <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
+                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div> 
         </form>
     </div> 

@@ -35,24 +35,29 @@
             </ul>
         </nav>
         <form>
-            <div class="container bg-dark text-white" style= "margin-top: 100px;">
+            <div class="container col-sm-6 bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
                     <div class="col-sm-12">
                         <h1>Cadastro de funcionario</h1> 
 
                         <p> 
-                            <label for="nome_cad">Seu nome</label>
+                            <label for="nome">Seu nome</label>
                             <input id="nome" name="nome" type="text" class="form-control" placeholder="ex. nome" required="required" />
                         </p>
 
                         <p> 
-                            <label for="email_cad">Seu e-mail</label>
+                            <label for="email">Seu e-mail</label>
                             <input id="email" name="email" type="email" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/> 
                         </p>
 
                         <p> 
-                            <label for="senha_cad">Sua senha</label>
+                            <label for="senha">Sua senha</label>
                             <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
+                        </p>
+                        
+                        <p> 
+                            <label for="senha">Senha de autorização</label>
+                            <input id="senha_auto" name="senha_auto" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
                         </p>
 
                         <p><strong>Selecione Função</strong></p>
@@ -67,7 +72,7 @@
                             </label>
                         </div>
                         <p> 
-                            <input type="submit" value="Cadastrar"/> 
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </p>
 
                         <p>  
