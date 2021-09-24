@@ -19,14 +19,75 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">7
         <link rel="stylesheet" href="css/globalcss.css">
 
-        <title>JSP Page</title>
+        <title>Tela do professor/Instrutor</title>
     </head>
     <body>
+        <style>
+            p{text-align: center; font-size: 20px;}
+        </style>
         <form action="processar.jsp">
             <div class="container bg-dark text-white" style= "">
+                <p>Medidas do aluno </p>
+                <div class="form-row">
+                   <div class="form-row">
+                    <div class="col-sm-3">
+                        <label for="numero">Altura em metros:</label>
+                        <input type="double" class="form-control" id="altura" name="altura">
+                        </div>
+                       <div class="col-sm-3">
+                          <label for="numero">Peso:</label>
+                        <input type="double" class="form-control" id="peso" name="peso"> 
+                       </div>
+                       <div class="col-sm-3">
+                          <label for="numero">Imc:</label>
+                        <input type="double" class="form-control" id="peso" name="peso" disabled> 
+                       </div>
+                       <div class="col-sm-3">
+                         <label for="numero">Pescoço:</label>
+                        <input type="double" class="form-control" id="pescoco" name="pescoco"> 
+                       </div>
+                </div>
+                    <div class="form-row">
+                        <div class="col-sm-3">
+                            <label for="numero">Tórax:</label>
+                        <input type="double" class="form-control" id="torax" name="torax"> 
+                        </div>
+                   <div class="col-sm-3">
+                       <label for="numero">Cintura:</label>
+                        <input type="double" class="form-control" id="cintura" name="cintura">
+                           </div>
+                        <div class="col-sm-3">
+                            <label for="numero">Abdome:</label>
+                        <input type="double" class="form-control" id="abdome" name="abdome">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="numero">Quadril:</label>
+                        <input type="double" class="form-control" id="quadril" name="quadril">
+                        </div>
+                </div>
+                        <div class="form-row">
+                            <div class="col-sm-3">
+                               <label for="numero">Antebraço:</label>
+                        <input type="double" class="form-control" id="antebraco" name="antebraco">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="numero">Braço:</label>
+                        <input type="double" class="form-control" id="braco" name="braco">
+                            </div>
+                            <div class="col-sm-3">
+                                 <label for="numero">Coxa:</label>
+                        <input type="double" class="form-control" id="coxa" name="coxa">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="numero">Panturrilha:</label>
+                                <input type="double" class="form-control" id="panturrilha" name="pantorrilha"><br>
+                            </div>
+                            </div>
+                </div>
+                <p>Tabela de treino</p>
                 <table class="table table-dark table-striped">
                     <tr> 
-                        <th>tipo</th>
+                        <th>treino A,B,C</th>
                         <th>exercicios</th>
                         <th>ser.</th>
                         <th>rep.</th>
