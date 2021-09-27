@@ -23,14 +23,14 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
-                </li>
-                <%
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
+            </li>
+            <%
                 int x=0;//verificar se usuario tem permissão
                 if (x==0){
                 %>
@@ -38,8 +38,14 @@
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
                 </li>
                 <%}%>
-            </ul>
-        </nav>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
+            </li>
+        </ul>
+    </nav>
         <form action="processar.jsp">
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">

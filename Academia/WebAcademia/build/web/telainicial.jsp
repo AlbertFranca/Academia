@@ -16,6 +16,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/globalcss.css">
     <title>Minha Academia</title>
 
 </head>
@@ -32,6 +33,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
+            </li>
         </ul>
     </nav>
     <form>
@@ -40,13 +47,13 @@
                 <div class="col-sm-12">
                     <h1>Login</h1>
                     <p> 
-                        <label for="nome_login">Seu nome</label>
-                        <input id="nome_login" name="nome_login" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/>
+                        <label for="nome">Informe seu login</label>
+                        <input id="login" name="login" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/>
                     </p>
 
                     <p> 
-                        <label for="email_login">Seu e-mail</label>
-                        <input id="email_login" name="email_login" type="password" class="form-control" placeholder="ex. senha" required="required" /> 
+                        <label for="email">Informe senha</label>
+                        <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. senha" required="required" /> 
                     </p>
 
                     <p> 
@@ -55,7 +62,7 @@
                     </p>
 
                     <p> 
-                        <input type="submit" value="Logar" /> 
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </p>
 
                     <p>
