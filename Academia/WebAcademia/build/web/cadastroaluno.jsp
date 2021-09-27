@@ -18,6 +18,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/globalcss.css">
         <title>Cadastro Aluno</title>
     </head>
     <body>
@@ -29,9 +30,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
                 </li>
+                <%
+                int x=0;//verificar se usuario tem permissão
+                if (x==0){
+                %>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
                 </li>
+                <%}%>
             </ul>
         </nav>
         <form action="processar.jsp">
@@ -48,10 +54,14 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <label for="email">Email(login):</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="ex. contato@htmlecsspro.com" required="required">
-                    </div>              
+                        <input type="email" class="form-control" id="email" name="email" placeholder="ex. contato@contato.com" required="required">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="celular">celular/zap:</label>
+                        <input type="text" class="form-control" id="celular" name="celular" placeholder="ex. (xx)xxxxx-xxxx"required="required">
+                    </div>    
                     <div class="col-sm-3">
                         <label for="cpf">CPF:</label>
                         <input type="text" class="form-control" id="cpf" name="cpf" placeholder="ex. xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"required="required">
@@ -89,11 +99,11 @@
                     </div>
                     <div class="col-sm-5">
                         <label for="cidade">Cidade:</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="ex. Recife" required="required"><br>
+                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="ex. Recife" required="required">
                     </div>
                     <div class="col-sm-3">
                         <label for="bairro">Bairro:</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="ex. Centro" required="required"><br> 
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="ex. Centro" required="required">
                     </div>
                 </div>
 
@@ -132,7 +142,11 @@
 Observações
                     </textarea><br> 
                 </div>
-                <input type="submit" value="Cadastrar" /> 
+                <div class="col-sm-3">
+                    <label for="senha">Sua senha</label>
+                    <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
+                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div> 
         </form>
     </div> 
