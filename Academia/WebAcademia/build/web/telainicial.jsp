@@ -35,10 +35,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-            </li>
+            </li>     
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
-            </li>
+            </li>          
         </ul>
     </nav>
     <form>

@@ -152,7 +152,7 @@ Observações
                     <label for="senha">Sua senha</label>
                     <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
                  </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar">Enviar</button>
             </div> 
         </form>
     </div> 
