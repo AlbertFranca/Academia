@@ -13,12 +13,13 @@
     </head>
     <body>
         <%
-            String nome = request.getParameter("nome");
-            String email = request.getParameter("email");
-            String celular = request.getParameter("celular");
+            String nome = request.getParameter("nome_funcionario");
+            String email = request.getParameter("email_funcionario");
+            String celular = request.getParameter("telefone_funcionario");
             String cpf = request.getParameter("cpf");
             String nascimento = request.getParameter("nascimento");
             String rua = request.getParameter("rua");
+            String numero = request.getParameter("numero");
             String complemento = request.getParameter("complemento");
             String cep = request.getParameter("cep");
             String estado = request.getParameter("estado");
@@ -33,6 +34,7 @@
             out.print(cpf);
             out.print(nascimento);
             out.print(rua);
+            out.print(numero);
             out.print(complemento);
             out.print(cep);
             out.print(estado);

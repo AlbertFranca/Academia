@@ -23,29 +23,29 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
-            </li>
-            <%
-                int x=0;//verificar se usuario tem permissão
-                if (x==0){
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
+                </li>
+                <%
+                    int x=0;//verificar se usuario tem permissão
+                    if (x==0){
                 %>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
                 </li>
                 <%}%>
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
-            </li>
-        </ul>
-    </nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
+                </li>
+            </ul>
+        </nav>
         <form action="processar.jsp">
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
@@ -151,9 +151,25 @@ Observações
                 <div class="col-sm-3">
                     <label for="senha">Sua senha</label>
                     <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
-                 </div>
-                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar">Enviar</button>
-            </div> 
+                </div>
+                <p>Financeiro</p>
+                <div class="form-row">
+                    <div class="col-sm-3">
+                        <label for="nascimento">Data de Vencimento:</label>
+                        <input type="date" class="form-control" id="vencimento" name="vencimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="dd/mm/aaaa" required="required">
+                        <span class="validity"></span> 
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="nascimento">Data de Pagamento:</label>
+                        <input type="date" class="form-control" id="pagamento" name="pagamento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="dd/mm/aaaa">
+                        <span class="validity"></span>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="numero">valor:</label>
+                        <input type="text" class="form-control" id="valor" name="valor" placeholder="ex. 123">  
+                    </div>  
+                </div>
+                    <button type="submit" class="btn btn-primary" id="btn-salvar" name="btn-salvar">Enviar</button>
         </form>
     </div> 
 </body>

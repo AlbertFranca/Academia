@@ -166,7 +166,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"></td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -210,7 +210,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -254,7 +254,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -298,7 +298,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -342,7 +342,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -386,7 +386,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -430,7 +430,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -474,7 +474,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -518,7 +518,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -562,7 +562,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -606,7 +606,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -650,7 +650,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -694,7 +694,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -738,7 +738,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -782,7 +782,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -826,7 +826,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -870,7 +870,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -914,7 +914,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -958,7 +958,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -1002,7 +1002,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -1046,7 +1046,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -1090,7 +1090,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -1134,7 +1134,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                         <tr>
                             <td>   <input type="text" class="form-control" id="tipo"name="tipo"></td>
@@ -1178,7 +1178,7 @@
                                     <option value="Pulley">Pulley</option>
                                 </select></td>
                             <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
-                            <td>   <input type="text" class="form-control" id="serie"name="serie"></td>
+                            <td>   <input type="text" class="form-control" id="repeticao"name="repeticao"</td>
                         </tr>
                     </table>
                     <input type="submit">
