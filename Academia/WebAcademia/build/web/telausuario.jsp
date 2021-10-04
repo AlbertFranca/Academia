@@ -40,7 +40,7 @@
                 </li>
             </ul>
         </nav>
-        <h1>Lista de exercicios</h1>
+        
         <style>
             p{text-align: center; font-size: 20px;}
         </style>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Tabela de treino</p>
+                    <p>Lista de exercicios</p>
                     <table class="table table-dark table-striped">
                         <tr> 
                             <th>treino A,B,C</th>

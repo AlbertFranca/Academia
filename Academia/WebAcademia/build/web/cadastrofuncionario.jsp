@@ -48,7 +48,7 @@
                     </div> 
                     <div class="col-sm-12">
                         <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome_funcionario" name="nome_funcionario" placeholder="ex. nome">
+                        <input type="text" class="form-control" id="nome_funcionario" name="nome_funcionario" placeholder="ex. nome" required="required">
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                 <div class="form-row">
                     <div class="col-sm-3">
                         <label for="senha">Sua senha</label>
-                        <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]" onkeyup="autorizacao()"/>
+                        <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]"/>
                     </div>
                     <div class="col-sm-3">
                         <label for="senha">Senha de autorização</label>
@@ -119,12 +119,12 @@
                 <p><strong>Selecione Função</strong></p>
                 <div class="form-check-inline">
                     <label class="form-check-label">
-                        <input type="radio" id="funcao" class="form-check-input" name="funcao">Recepcionista
+                        <input type="radio" id="funcao" class="form-check-input" name="funcao"value="recepcionista">Recepcionista
                     </label>
                 </div>
                 <div class="form-check-inline">
                     <label class="form-check-label">
-                        <input type="radio" id="funcao" class="form-check-input" name="funcao">Professor
+                        <input type="radio" id="funcao" class="form-check-input" name="funcao" value="professor">Professor
                     </label>
                 </div>
                 <p> 
@@ -154,6 +154,7 @@
         var bairro = document.getElementById('bairro').value;
         var senha = document.getElementById('senha').value;
         var senha_auto = document.getElementById('senha_auto').value;
+        var funcao = document.getElementById('funcao').value;
 
         if (nome.trim() == "") {
             alert('Informe o nome do funcionario');
@@ -207,23 +208,15 @@
             alert('Informe senha de autorização');
             return;
         }
+        if (funcao.trim() == "") {
+            alert('selecione funcao');
+            return;
+        }
         document.getElementById('cadastra_funcionario').submit();
     }
-    //function autorizacao() {
-    //    let senha1 = document.getElementById("senha");
-     //   let senha2 = document.getElementById("senha_auto");
-     //   let s1 = "admin";
-    //    let s2 = senha2.value;
-    //    if (s1 == s2) {
-     //       alert("Dados Cadastrados");
-     //       return true;
-     //   } else {
-      //      alert("Senhas não batem. Verifique senha de autorização.");
-     //       return false;
-     //   }
-   // }
+
 </script>
 </body>
 </html>
-</body>
-</html>
+
+

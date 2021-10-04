@@ -46,7 +46,7 @@
                 </li>
             </ul>
         </nav>
-        <form action="processar.jsp">
+        <form id="cadastrar_aluno" name="cadastrar_aluno" action="processaraluno.jsp">
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
                     <div class="col-sm-2">
@@ -55,7 +55,7 @@
                     </div> 
                     <div class="col-sm-10">
                         <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="ex. nome" required="required">
+                        <input type="text" class="form-control" id="nome_aluno" name="nome_aluno" placeholder="ex. nome" >
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@ Observações
                 </div>
                 <div class="col-sm-3">
                     <label for="senha">Sua senha</label>
-                    <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" required="required"/>
+                    <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]" required="required"/>
                 </div>
                 <p>Financeiro</p>
                 <div class="form-row">
@@ -169,8 +169,76 @@ Observações
                         <input type="text" class="form-control" id="valor" name="valor" placeholder="ex. 123">  
                     </div>  
                 </div>
-                    <button type="submit" class="btn btn-primary" id="btn-salvar" name="btn-salvar">Enviar</button>
+                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Enviar</button>
+            </div> 
         </form>
-    </div> 
-</body>
+                <script>
+            validarFormularioAluno = function () {
+                //telefone_funcionario
+
+                var nome = document.getElementById('nome_aluno').value;
+                var email = document.getElementById('email').value;
+                var cpf = document.getElementById('cpf').value;
+                var rua = document.getElementById('rua').value;
+                var numero = document.getElementById('numero').value;
+                var cep = document.getElementById('cep').value;
+                var estado = document.getElementById('estado').value;
+                var cidade = document.getElementById('cidade').value;
+                var bairro = document.getElementById('bairro').value;
+                var senha = document.getElementById('senha').value;
+
+                if (nome.trim() == "") {
+                    alert('Informe o nome do aluno');
+                    return;
+                } else if (nome.length < 10) {
+                    alert('O nome do aluno deverá ter mais de 10 caracteres');
+                    return;
+                }
+                if (email.indexOf("@") == -1 || email.indexOf(".") == -1 || email.trim() == "") {
+                    alert('Por favor, indique um e-mail válido.');
+                    return;
+                }
+                cpf = cpf.replace(/[^\d]+/g, '')
+                if (cpf.trim().length != 11) {
+                    alert('Informe cpf valido');
+                    return;
+                }
+                if (rua.trim() == "") {
+                    alert('Informe nome da rua');
+                    return;
+                }
+                if (numero.trim() == "") {
+                    alert('Informe numero da casa');
+                    return;
+                }
+                cep = cep.replace(/[^\d]+/g, '')
+                if (cep.trim().length != 8) {
+                    alert('Informe CEP valido');
+                    return;
+                }
+                if (estado.trim() == "") {
+                    alert('Informe estado');
+                    return;
+                } else if (estado.length != 2) {
+                    alert('informe abreviação do estado');
+                    return;
+                }
+                if (cidade.trim() == "") {
+                    alert('Informe a cidade');
+                    return;
+                }
+                if (bairro.trim() == "") {
+                    alert('Informe bairro');
+                    return;
+                }
+                if (senha.trim() == "") {
+                    alert('Informe senha');
+                    return;
+                }
+              
+                document.getElementById('cadastrar_aluno').submit();
+            }
+
+        </script>
+    </body>
 </html>
