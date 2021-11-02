@@ -1,14 +1,14 @@
 <%-- 
-    Document   : cadastroaluno
-    Created on : 2 de set. de 2021, 22:25:17
+    Document   : alteraraluno
+    Created on : 27 de out. de 2021, 16:51:07
     Author     : islad
 --%>
-
+<%@page import="aluno.Aluno"%>
+<%@page import="aluno.AlunoCRUD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
-    <head>
+ <head>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- jQuery library -->
@@ -19,62 +19,44 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/globalcss.css">
-        <title>Cadastro Aluno</title>
+        <title>Alterar aluno</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
-                </li>
-                <%
-                    int x=0;//verificar se usuario tem permissão
-                    if (x==0){
-                %>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
-                </li>
-                <%}%>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
-                </li>
-            </ul>
-        </nav>
-        <form id="cadastrar_aluno" name="cadastrar_aluno" action="processaraluno.jsp">
+        <%
+            AlunoCRUD dados = new AlunoCRUD();
+            String matricula = request.getParameter("matricula");
+            Aluno a = dados.getAluno(Integer.parseInt(matricula));
+
+        %>
+        <form id="alterar_aluno" name="alterar_aluno" action="processarupdatealuno.jsp">
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
                     <div class="col-sm-2">
                         <label for="matricula">Numero de matricula:</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula" disabled>  
+                        <input readonly="true" type="text" class="form-control" id="matricula" name="matricula" disabled value="<%=a.getMatricula()%>" >  
                     </div> 
                     <div class="col-sm-10">
                         <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="ex. nome" >
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="ex. nome" value="<%=a.getNome()%>" >
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col-sm-3">
                         <label for="email">Email(login):</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="ex. contato@contato.com" required="required">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="ex. contato@contato.com" required="required" value="<%=a.getEmail()%>" >
                     </div>
                     <div class="col-sm-3">
                         <label for="celular">celular/zap:</label>
-                        <input type="text" class="form-control" id="celular" name="celular" placeholder="ex. (xx)xxxxx-xxxx"required="required">
+                        <input type="text" class="form-control" id="celular" name="celular" placeholder="ex. (xx)xxxxx-xxxx"required="required" value="<%=a.getCelular()%>" >
                     </div>    
                     <div class="col-sm-3">
                         <label for="cpf">CPF:</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="ex. xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"required="required">
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="ex. xxx.xxx.xxx-xx" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"required="required" value="<%=a.getCpf()%>" >
                     </div>
                     <div class="col-sm-3">
                         <label for="nascimento">Data de Nascimento:</label>
-                        <input type="date" class="form-control" id="nascimento" name="nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="dd/mm/aaaa" required="required">
+                        <input type="date" class="form-control" id="nascimento" name="nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="dd/mm/aaaa" required="required" value="<%=a.getNascimento()%>" >
                         <span class="validity"></span> 
                     </div>
                 </div>
@@ -82,30 +64,30 @@
                 <div class="form-row">
                     <div class="col-sm-8">
                         <label for="rua">Rua:</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="ex. rua sdafea" required="required">
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="ex. rua sdafea" required="required" value="<%=a.getRua()%>" >
                     </div>            
                     <div class="col-sm-4">
                         <label for="numero">Nº:</label>
-                        <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 123" required="required">  
+                        <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 123" required="required" value="<%=a.getNumero()%>" >  
                     </div>           
                 </div>
 
                 <div class="form-row">
                     <div class="col-sm-3">
                         <label for="cep">Cep:</label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="ex. xxxxx-xx" pattern="[0-9]{5}-[0-9]{3}"required="required">  
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="ex. xxxxx-xx" pattern="[0-9]{5}-[0-9]{3}"required="required" value="<%=a.getCep()%>" >  
                     </div>
                     <div class="col-sm-1">
                         <label for="estado">Estado:</label>
-                        <input type="text" class="form-control" id="estado" name="estado" placeholder="ex. PE" required="required"> 
+                        <input type="text" class="form-control" id="estado" name="estado" placeholder="ex. PE" required="required" value="<%=a.getEstado()%>" > 
                     </div>
                     <div class="col-sm-5">
                         <label for="cidade">Cidade:</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="ex. Recife" required="required">
+                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="ex. Recife" required="required" value="<%=a.getCidade()%>" >
                     </div>
                     <div class="col-sm-3">
                         <label for="bairro">Bairro:</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="ex. Centro" required="required">
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="ex. Centro" required="required" value="<%=a.getBairro()%>" >
                     </div>
                 </div>
 
@@ -127,13 +109,13 @@
                     <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]" required="required"/><br>
                 </div>
          
-                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Cadastrar</button>
+                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Alterar</button>
             </div> 
         </form>
         <script>
             validarFormularioAluno = function () {
                 //telefone_funcionario
-                
+
                 var nome = document.getElementById('nome').value;
                 var email = document.getElementById('email').value;
                 var cpf = document.getElementById('cpf').value;
@@ -144,7 +126,7 @@
                 var cidade = document.getElementById('cidade').value;
                 var bairro = document.getElementById('bairro').value;
                 var senha = document.getElementById('senha').value;
-                
+
                 if (nome.trim() == "") {
                     alert('Informe o nome do aluno');
                     return;
@@ -194,7 +176,7 @@
                     return;
                 }
 
-                document.getElementById('cadastrar_aluno').submit();
+                document.getElementById('alterar_aluno').submit();
             }
 
         </script>
