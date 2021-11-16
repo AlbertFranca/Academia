@@ -11,11 +11,11 @@
 <%
     try {
         //recebendo os dados do formulário
-        String cpf = request.getParameter("cpf");
+        String matricula_funcionario = request.getParameter("matricula_funcionario");
         //crio o Objeto
         Funcionario funcionario = new Funcionario();
         //repassando os dados do form para o Objeto
-        funcionario.setCpf(cpf);
+        funcionario.setMatricula_funcionario(Integer.parseInt(matricula_funcionario));
         //envio o Objeto para o referido método
         FuncionarioCRUD dados = new FuncionarioCRUD();
         dados.removerFuncionario(funcionario);

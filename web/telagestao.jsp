@@ -30,6 +30,7 @@
                     <table class="table table-dark table-striped " style=" width: 100%;" >
                         <thead>
                             <tr>
+                                <th>Matricula</th>
                                 <th>Cargo</th>
                                 <th>Nome</th>
                                 <th>CPF</th>
@@ -48,6 +49,7 @@
                                 ArrayList<Funcionario> lista = dados.selectFuncionario();
                                 for (Funcionario a : lista) {
                                     out.print("<tr>");
+                                    out.print("<td>" + a.getMatricula_funcionario() + "</td>");
                                     out.print("<td>" + a.getFuncao() + "</td>");
                                     out.print("<td>" + a.getNome() + "</td>");
                                     out.print("<td>" + a.getCpf() + "</td>");
@@ -58,8 +60,8 @@
                                     out.print("<td>" + a.getCelular() + "</td>");
                                     out.print("<td>" + a.getSenha() + "</td>");
                                     out.print("<td>");
-                                    out.print("<a class='btn btn-warning' href='alterarfuncionario.jsp?matricula=" + a.getCpf() + "' >Alterar</a>");
-                                    out.print("<a class='btn btn-danger' href='#' onclick='abrirMensagemRemocao(" + a.getCpf() + ")');'>Remover</a>");
+                                    out.print("<a class='btn btn-warning' href='alterarfuncionario.jsp?matricula_funcionario=" + a.getMatricula_funcionario() + "' >Alterar</a>");
+                                    out.print("<a class='btn btn-danger' href='#' onclick='abrirMensagemRemocao(" + a.getMatricula_funcionario() + ")');'>Remover</a>");
                                     out.print("</td>");
                                     out.print("</tr>");
                                 }
@@ -93,13 +95,13 @@
         </div>
         <script>
             $(document).ready(function () {
-                let cpfSelecionada;
-                abrirMensagemRemocao = function (cpf) {
-                    cpfSelecionada = cpf;
+                let matricula_funcionarioSelecionada;
+                abrirMensagemRemocao = function (matricula_funcionario) {
+                    matricula_funcionarioSelecionada = matricula_funcionario;
                     $("#myModal").modal();
                 }
-                removerFuncionario = function (cpf) {
-                    window.location.href = "processardeletarfuncionario.jsp?cpf=" + cpfSelecionada;
+                removerFuncionario = function (matricula_funcionario) {
+                    window.location.href = "processardeletarfuncionario.jsp?matricula_funcionario=" + matricula_funcionarioSelecionada;
                 }
             });
         </script>

@@ -45,13 +45,13 @@ public class AlunoCRUD {
 
     public void cadastrarAluno(Aluno a) throws SQLException, Exception {
         //instrucao a ser executada
-        String sql = "INSERT INTO aluno (matricula, nome, cpf, sexo, estado, cidade, bairro, cep, rua, numero, email, celular, senha, nascimento) ";
+        String sql = "INSERT INTO aluno (matricula_aluno, nome, cpf, sexo, estado, cidade, bairro, cep, rua, numero, email, celular, senha, nascimento) ";
         sql += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        preparedStatement.setInt(1, a.getMatricula());
+        preparedStatement.setInt(1, a.getMatricula_aluno());
         preparedStatement.setString(2, a.getNome());
         preparedStatement.setString(3, a.getCpf());
         preparedStatement.setString(4, a.getSexo());
@@ -73,12 +73,12 @@ public class AlunoCRUD {
 
     public void removerAluno(Aluno a) throws SQLException, Exception {
         //instrucao a ser executada
-        String sql = "DELETE FROM aluno WHERE matricula = ? ";
+        String sql = "DELETE FROM aluno WHERE matricula_aluno = ? ";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        preparedStatement.setInt(1, a.getMatricula());
+        preparedStatement.setInt(1, a.getMatricula_aluno());
         // execute insert SQL stetement
         preparedStatement.executeUpdate();
         //fechando a conexão com o banco de dados
@@ -87,12 +87,12 @@ public class AlunoCRUD {
 
     public void atualizarAluno(Aluno a) throws SQLException, Exception {
         //instrucao a ser executada
-        String sql = "UPDATE aluno SET Nome = ?, Cpf = ?, Sexo = ?, Estado = ?, Cidade = ?, Bairro = ?, Cep = ?, Rua = ?, Numero = ?, Email = ?, Celular = ?, Senha = ?, Nascimento = ?  WHERE matricula = ? ";
+        String sql = "UPDATE aluno SET Nome = ?, Cpf = ?, Sexo = ?, Estado = ?, Cidade = ?, Bairro = ?, Cep = ?, Rua = ?, Numero = ?, Email = ?, Celular = ?, Senha = ?, Nascimento = ?  WHERE matricula_aluno = ? ";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        
+        //
         preparedStatement.setString(1, a.getNome());
         preparedStatement.setString(2, a.getCpf());
         preparedStatement.setString(3, a.getSexo());
@@ -105,8 +105,9 @@ public class AlunoCRUD {
         preparedStatement.setString(10, a.getEmail());
         preparedStatement.setString(11, a.getCelular());
         preparedStatement.setString(12, a.getSenha());
-        preparedStatement.setInt(13, a.getMatricula());
-        preparedStatement.setDate(14, (Date) a.getNascimento());
+        preparedStatement.setDate(13, (Date) a.getNascimento());
+        preparedStatement.setInt(14, a.getMatricula_aluno());
+        
         // execute insert SQL stetement
         preparedStatement.executeUpdate();
         //fechando a conexão com o banco de dados
@@ -117,7 +118,7 @@ public class AlunoCRUD {
         ArrayList<Aluno> retorno = new ArrayList<>();
 
         //instrução sql correspondente a inserção do aluno
-        String sql = " select a.Matricula, a.Nome, a.Cpf, a.Sexo, a.Estado, a.Cidade, a.Bairro, a.Cep, a.Rua, a.Numero, a.Email, a.Celular, a.Senha, a.Nascimento ";
+        String sql = " select a.Matricula_aluno, a.Nome, a.Cpf, a.Sexo, a.Estado, a.Cidade, a.Bairro, a.Cep, a.Rua, a.Numero, a.Email, a.Celular, a.Senha, a.Nascimento ";
         sql += " from aluno as a ";
         this.abrirConexao();
         //preparando a instrução
@@ -127,7 +128,7 @@ public class AlunoCRUD {
         //lendo os resultados
         while (leitor.next()) {
             Aluno a = new Aluno();
-            a.setMatricula(leitor.getInt("matricula"));
+            a.setMatricula_aluno(leitor.getInt("matricula_aluno"));
             a.setNome(leitor.getString("Nome"));
             a.setCpf(leitor.getString("Cpf"));
             a.setSexo(leitor.getString("Sexo"));
@@ -148,12 +149,12 @@ public class AlunoCRUD {
         return retorno;
     }
 
-    public Aluno getAluno(int matricula) throws Exception {
+    public Aluno getAluno(int matricula_aluno) throws Exception {
         Aluno retorno = new Aluno();
         //instrução sql correspondente a inserção do aluno
-        String sql = " select a.Matricula, a.Nome, a.Cpf, a.Sexo, a.Estado, a.Cidade, a.Bairro, a.Cep, a.Rua, a.Numero, a.Email, a.Celular, a.Senha, a.Nascimento ";
+        String sql = " select a.Matricula_aluno, a.Nome, a.Cpf, a.Sexo, a.Estado, a.Cidade, a.Bairro, a.Cep, a.Rua, a.Numero, a.Email, a.Celular, a.Senha, a.Nascimento ";
         sql += " from aluno as a ";
-        sql += " where a.matricula = " + matricula;
+        sql += " where a.matricula_aluno = " + matricula_aluno;
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
@@ -161,7 +162,7 @@ public class AlunoCRUD {
         ResultSet leitor = preparedStatement.executeQuery();
         //lendo os resultados
         while (leitor.next()) {
-            retorno.setMatricula(leitor.getInt("matricula"));
+            retorno.setMatricula_aluno(leitor.getInt("matricula_aluno"));
             retorno.setNome(leitor.getString("Nome"));
             retorno.setCpf(leitor.getString("Cpf"));
             retorno.setSexo(leitor.getString("Sexo"));

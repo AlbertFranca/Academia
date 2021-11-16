@@ -13,7 +13,7 @@ import java.sql.Date;
  */
 public class Funcionario {
     
-    private String cpf;
+    private int matricula_funcionario;
     private String nome;
     private String email;
     private String celular;
@@ -26,6 +26,7 @@ public class Funcionario {
     private String bairro;
     private String senha;
     private String funcao;
+     private String cpf;
 
     /**
      * @return the cpf
@@ -208,7 +209,20 @@ public class Funcionario {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
-   
-    
+
+    /**
+     * @return the matricula
+     */
+    public int getMatricula_funcionario() {
+        return matricula_funcionario;
+    }
+
+    /**
+     * @param matricula_funcionario
+     */
+    public void setMatricula_funcionario(int matricula_funcionario) {
+        this.matricula_funcionario = matricula_funcionario;
+    }
+
  
 }

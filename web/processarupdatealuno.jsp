@@ -10,7 +10,7 @@
 
   <% try {
             //receber dados do formulario
-            String matricula = request.getParameter("matricula");
+            String matricula_aluno = request.getParameter("matricula_aluno");
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");
             String sexo = request.getParameter("sexo");
@@ -27,8 +27,8 @@
             //criar objeto
             Aluno aluno = new Aluno();
             //repassar dados do formulario para o objeto
-            
-            //aluno.setMatricula(Integer.parseInt(matricula));
+             
+            aluno.setMatricula_aluno(Integer.parseInt(matricula_aluno));
             aluno.setNome(nome);
             aluno.setEmail(email);
             aluno.setSexo(sexo);

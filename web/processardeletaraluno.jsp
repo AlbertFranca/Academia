@@ -11,11 +11,11 @@
 <%
     try {
         //recebendo os dados do formulário
-        String matricula = request.getParameter("matricula");
+        String matricula_aluno = request.getParameter("matricula_aluno");
         //crio o Objeto
         Aluno aluno = new Aluno();
         //repassando os dados do form para o Objeto
-        aluno.setMatricula(Integer.parseInt(matricula));
+        aluno.setMatricula_aluno(Integer.parseInt(matricula_aluno));
         //envio o Objeto para o referido método
         AlunoCRUD dados = new AlunoCRUD();
         dados.removerAluno(aluno);

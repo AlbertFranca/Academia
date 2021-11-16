@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
- <head>
+    <head>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- jQuery library -->
@@ -24,18 +24,18 @@
     <body>
         <%
             AlunoCRUD dados = new AlunoCRUD();
-            String matricula = request.getParameter("matricula");
-            Aluno a = dados.getAluno(Integer.parseInt(matricula));
+            String matricula_aluno = request.getParameter("matricula_aluno");
+            Aluno a = dados.getAluno(Integer.parseInt(matricula_aluno));
 
         %>
         <form id="alterar_aluno" name="alterar_aluno" action="processarupdatealuno.jsp">
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
                     <div class="col-sm-2">
-                        <label for="matricula">Numero de matricula:</label>
-                        <input readonly="true" type="text" class="form-control" id="matricula" name="matricula" disabled value="<%=a.getMatricula()%>" >  
+                        <label for="matricula_aluno">Numero de matricula:<%out.print(a.getMatricula_aluno());%></label>
+                        <input readonly="true" type="hidden" class="form-control" id="matricula_aluno" name="matricula_aluno" value="<%=a.getMatricula_aluno()%>" >  
                     </div> 
-                    <div class="col-sm-10">
+                    <div class="col-sm-12">
                         <label for="nome">Nome:</label>
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="ex. nome" value="<%=a.getNome()%>" >
                     </div>
@@ -95,12 +95,21 @@
                     <p><strong>Selecione o sexo</strong></p>
                     <div class="form-check-inline">
                         <label class="form-check-label">
+                            <% if(a.getSexo().equals("masculino")){ %>
+                            <input checked type="radio" class="form-check-input" name="sexo" value="masculino">Masculino
+                            <% }else{%>
                             <input type="radio" class="form-check-input" name="sexo" value="masculino">Masculino
+                            <%} %>
                         </label>
                     </div>
                     <div class="form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="sexo" value=" feminino">Feminino
+                            <% if(a.getSexo().equals("feminino")){ %>
+                            <input checked type="radio" class="form-check-input" name="sexo" value="feminino">Feminino
+                            <% }else{%>
+                            <input type="radio" class="form-check-input" name="sexo" value="feminino">Feminino
+                            <%} %>
+
                         </label>
                     </div>
                 </div>
@@ -108,11 +117,18 @@
                     <label for="senha">Sua senha</label>
                     <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]" required="required"/><br>
                 </div>
-         
-                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Alterar</button>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Alterar</button>
+                    <button type="button" class="btn btn-info" onclick="voltar();">Voltar</button>
+                </div>
             </div> 
         </form>
         <script>
+            $(document).ready(function () {
+                voltar = function () {
+                    window.location.href = "telarecepcao.jsp";
+                }
+            });
             validarFormularioAluno = function () {
                 //telefone_funcionario
 

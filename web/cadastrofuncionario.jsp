@@ -116,19 +116,21 @@
                         <input type="radio" id="funcao" class="form-check-input" name="funcao" value="professor">Professor
                     </label>
                 </div>
-                <p> 
+                <div class="form-group">
                     <br><button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioFuncionario()">Cadastrar</button>
-                </p>
-
-                <p>  
-                    Já tem conta?
-                    <a href="http://localhost:8080/WebAcademia/telainicial.jsp"> Ir para Login </a>
-                </p>
+                    <button type="button" class="btn btn-info" onclick="voltar();">Voltar</button>
+                </div>
             </div>
         </div>
     </div> 
 </form>
 <script>
+    $(document).ready(function () {
+                voltar = function () {
+                    window.location.href = "telagestao.jsp";
+                }
+            });
+    
     validarFormularioFuncionario = function () {
         //telefone_funcionario
 

@@ -4,6 +4,8 @@
     Author     : islad
 --%>
 
+
+<%@page import="login.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
@@ -21,7 +23,8 @@
 
 </head>
 
-<body>  
+<body>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -48,7 +51,7 @@
                     <h1>Login</h1>
                     <p> 
                         <label for="nome">Informe seu login</label>
-                        <input id="login" name="login" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/>
+                        <input id="email" name="email" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/>
                     </p>
 
                     <p> 
@@ -73,7 +76,38 @@
             </div>
         </div>
     </form>
+    <%
+// pagina jsp, que verifica se o que foi digitado no formulario login & senha est� correto. 
+//Essa pagina tem comunica��o com a classe .java(User) para verificar se aquele usuario existe no BD. 
+//Em caso positivo informa ao usuario que o login est� correto. 	
+	User us = new User();
+	String email = request.getParameter("email");
+	String senha = request.getParameter("senha");
+	boolean status = us.verificarUsuario(email, senha);
 
+	if (us.result == true) {
+		out.println("Sucesso" + us.email);
+	} else {
+		out.println("Login ou Senha Invalidos");
+	}
+	%>;
+    
+  <%-- <%
+ 
+
+//Em caso positivo informa ao usuario que o login est� correto. 	
+	Login login = new Login();
+	String email = request.getParameter("email");
+	String senha = request.getParameter("senha");
+	boolean status = login.verificarUsuario(email, senha);
+
+	if (login.result == true) {
+		out.println("Sucesso" + login.email);
+	} else {
+		out.println("Login ou Senha Invalidos");
+	}
+	%>; --%>
+  
 </body>
 
 </html>

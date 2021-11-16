@@ -49,7 +49,7 @@
                                 ArrayList<Aluno> lista = dados.selectAluno();
                                 for (Aluno a : lista) {
                                     out.print("<tr>");
-                                    out.print("<td>" + a.getMatricula() + "</td>");
+                                    out.print("<td>" + a.getMatricula_aluno() + "</td>");
                                     out.print("<td>" + a.getNome() + "</td>");
                                     out.print("<td>" + a.getCpf() + "</td>");
                                     out.print("<td>" + a.getNascimento() + "</td>");
@@ -60,8 +60,8 @@
                                     out.print("<td>" + a.getCelular() + "</td>");
                                     out.print("<td>" + a.getSenha() + "</td>");
                                     out.print("<td>");
-                                    out.print("<a class='btn btn-warning' href='alteraraluno.jsp?matricula=" + a.getMatricula() + "' >Alterar</a>");
-                                    out.print("<a class='btn btn-danger' href='#' onclick='abrirMensagemRemocao(" + a.getMatricula() + ")');'>Remover</a>");
+                                    out.print("<a class='btn btn-warning' href='alteraraluno.jsp?matricula_aluno=" + a.getMatricula_aluno() + "' >Alterar</a>");
+                                    out.print("<a class='btn btn-danger' href='#' onclick='abrirMensagemRemocao(" + a.getMatricula_aluno() + ")');'>Remover</a>");
                                     out.print("</td>");
                                     out.print("</tr>");
                                 }
@@ -95,13 +95,13 @@
         </div>
         <script>
             $(document).ready(function () {
-                let matriculaSelecionada;
-                abrirMensagemRemocao = function (matricula) {
-                    matriculaSelecionada = matricula;
+                let matricula_alunoSelecionada;
+                abrirMensagemRemocao = function (matricula_aluno) {
+                    matricula_alunoSelecionada = matricula_aluno;
                     $("#myModal").modal();
                 }
-                removerAluno = function (matricula) {
-                    window.location.href = "processardeletaraluno.jsp?matricula=" + matriculaSelecionada;
+                removerAluno = function (matricula_aluno) {
+                    window.location.href = "processardeletaraluno.jsp?matricula_aluno=" + matricula_alunoSelecionada;
                 }
             });
         </script>

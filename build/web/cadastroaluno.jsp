@@ -50,8 +50,8 @@
             <div class="container bg-dark text-white" style= "margin-top: 100px;">
                 <div class="form-row">
                     <div class="col-sm-2">
-                        <label for="matricula">Numero de matricula:</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula" disabled>  
+                        <label for="matricula_aluno">Numero de matricula:</label>
+                        <input type="text" class="form-control" id="matricula_aluno" name="matricula_aluno" disabled>  
                     </div> 
                     <div class="col-sm-10">
                         <label for="nome">Nome:</label>
@@ -126,14 +126,21 @@
                     <label for="senha">Sua senha</label>
                     <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. 1234" pattern="[^. ][A-Za-z0-9.]*[^. ][@][A-Za-z0-9.]*[^. ]" required="required"/><br>
                 </div>
-         
-                <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Cadastrar</button>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="btn-salvar" name="btn-salvar" onclick="validarFormularioAluno()">Cadastrar</button>
+                    <button type="button" class="btn btn-info" onclick="voltar();">Voltar</button>
+                </div>
             </div> 
         </form>
         <script>
+            $(document).ready(function () {
+                voltar = function () {
+                    window.location.href = "telarecepcao.jsp";
+                }
+            });
             validarFormularioAluno = function () {
-                //telefone_funcionario
-                
+              
+
                 var nome = document.getElementById('nome').value;
                 var email = document.getElementById('email').value;
                 var cpf = document.getElementById('cpf').value;
@@ -144,7 +151,7 @@
                 var cidade = document.getElementById('cidade').value;
                 var bairro = document.getElementById('bairro').value;
                 var senha = document.getElementById('senha').value;
-                
+
                 if (nome.trim() == "") {
                     alert('Informe o nome do aluno');
                     return;

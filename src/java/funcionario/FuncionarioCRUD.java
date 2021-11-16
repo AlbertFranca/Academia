@@ -45,13 +45,13 @@ public class FuncionarioCRUD {
 
     public void cadastrarFuncionario(Funcionario a) throws SQLException, Exception {
         //instrucao a ser executada
-        String sql = "INSERT INTO funcionario (cpf, nome, email, celular, nascimento, rua, numero, cep, estado, cidade, bairro, senha, funcao) ";
-        sql += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO funcionario (matricula_funcionario, nome, email, celular, nascimento, rua, numero, cep, estado, cidade, bairro, senha, funcao, cpf) ";
+        sql += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        preparedStatement.setString(1, a.getCpf());
+        preparedStatement.setInt(1, a.getMatricula_funcionario());
         preparedStatement.setString(2, a.getNome());
         preparedStatement.setString(3, a.getEmail());
         preparedStatement.setString(4, a.getCelular());
@@ -64,6 +64,7 @@ public class FuncionarioCRUD {
         preparedStatement.setString(11, a.getBairro());
         preparedStatement.setString(12, a.getSenha());
         preparedStatement.setString(13, a.getFuncao());
+        preparedStatement.setString(14, a.getCpf());
         
         // execute insert SQL stetement   
         preparedStatement.executeUpdate();
@@ -73,12 +74,12 @@ public class FuncionarioCRUD {
 
     public void removerFuncionario(Funcionario a) throws SQLException, Exception {
         //instrucao a ser executada
-        String sql = "DELETE FROM funcionario WHERE cpf = ? ";
+        String sql = "DELETE FROM funcionario WHERE matricula_funcionario = ? ";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        preparedStatement.setString(1, a.getCpf());
+        preparedStatement.setInt(1, a.getMatricula_funcionario());
         // execute insert SQL stetement
         preparedStatement.executeUpdate();
         //fechando a conexão com o banco de dados
@@ -86,26 +87,27 @@ public class FuncionarioCRUD {
     }
 
     public void atualizarFuncionario(Funcionario a) throws SQLException, Exception {
-        //instrucao a ser executada
-        String sql = "UPDATE funcionario SET Nome = ?, Email = ?, Celular = ?, Nascimento = ?, Rua = ?, Numero = ?, Cep = ?, Estado = ?, Cidade = ?, Bairro = ?, Senha = ?, Funcao = ?  WHERE cpf = ? ";
+        //instrucao a ser executada 
+        String sql = "UPDATE funcionario SET Nome = ?, Email = ?, Celular = ?, Nascimento = ?, Rua = ?, Numero = ?, Cep = ?, Estado = ?, Cidade = ?, Bairro = ?, Senha = ?, Funcao = ?, Cpf = ?  WHERE matricula_funcionario = ? ";
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         //passando os valores para os parametros
-        
-        preparedStatement.setString(1, a.getCpf());
-        preparedStatement.setString(2, a.getNome());
-        preparedStatement.setString(3, a.getEmail());
-        preparedStatement.setString(4, a.getCelular());
-        preparedStatement.setDate(5, (Date) a.getNascimento());  
-        preparedStatement.setString(6, a.getRua());
-        preparedStatement.setString(7, a.getNumero());
-        preparedStatement.setString(8, a.getCep());
-        preparedStatement.setString(9, a.getEstado());
-        preparedStatement.setString(10, a.getCidade());
-        preparedStatement.setString(11, a.getBairro());
-        preparedStatement.setString(12, a.getSenha());
-        preparedStatement.setString(13, a.getFuncao());
+  
+        preparedStatement.setString(1, a.getNome());
+        preparedStatement.setString(2, a.getEmail());
+        preparedStatement.setString(3, a.getCelular());
+        preparedStatement.setDate(4, (Date) a.getNascimento());  
+        preparedStatement.setString(5, a.getRua());
+        preparedStatement.setString(6, a.getNumero());
+        preparedStatement.setString(7, a.getCep());
+        preparedStatement.setString(8, a.getEstado());
+        preparedStatement.setString(9, a.getCidade());
+        preparedStatement.setString(10, a.getBairro());
+        preparedStatement.setString(11, a.getSenha());
+        preparedStatement.setString(12, a.getFuncao());
+        preparedStatement.setString(13, a.getCpf());
+        preparedStatement.setInt(14, a.getMatricula_funcionario());
         // execute insert SQL stetement
         preparedStatement.executeUpdate();
         //fechando a conexão com o banco de dados
@@ -116,7 +118,7 @@ public class FuncionarioCRUD {
         ArrayList<Funcionario> retorno = new ArrayList<>();
 
         //instrução sql correspondente a inserção do aluno
-        String sql = " select a.Cpf, a.Nome, a.Email, a.Celular, a.Nascimento, a.Rua, a.Numero, a.Cep, a.Estado, a.Cidade, a.Bairro, a.Senha, a.Funcao ";
+        String sql = " select a.Matricula_funcionario, a.Cpf, a.Nome, a.Email, a.Celular, a.Nascimento, a.Rua, a.Numero, a.Cep, a.Estado, a.Cidade, a.Bairro, a.Senha, a.Funcao ";
         sql += " from funcionario as a ";
         this.abrirConexao();
         //preparando a instrução
@@ -126,6 +128,7 @@ public class FuncionarioCRUD {
         //lendo os resultados
         while (leitor.next()) {
             Funcionario a = new Funcionario();
+            a.setMatricula_funcionario(leitor.getInt("Matricula_funcionario"));
             a.setCpf(leitor.getString("Cpf"));
             a.setNome(leitor.getString("Nome"));
             a.setEmail(leitor.getString("Email"));
@@ -146,12 +149,12 @@ public class FuncionarioCRUD {
         return retorno;
     }
 
-    public Funcionario getFuncionario(String cpf) throws Exception {
+    public Funcionario getFuncionario(int matricula_funcionario) throws Exception {
         Funcionario retorno = new Funcionario();
         //instrução sql correspondente a inserção do aluno
-        String sql = " select a.Cpf, a.Nome, a.Email, a.Celular, a.Nascimento, a.Rua, a.Numero, a.Cep, a.Estado, a.Cidade, a.Bairro, a.Senha, a.Funcao ";
+        String sql = " select a.Matricula_funcionario, a.Cpf, a.Nome, a.Email, a.Celular, a.Nascimento, a.Rua, a.Numero, a.Cep, a.Estado, a.Cidade, a.Bairro, a.Senha, a.Funcao ";
         sql += " from funcionario as a ";
-        sql += " where a.cpf = " + cpf;
+        sql += " where a.matricula_funcionario = " + matricula_funcionario;
         this.abrirConexao();
         //preparando a instrução
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
@@ -159,6 +162,7 @@ public class FuncionarioCRUD {
         ResultSet leitor = preparedStatement.executeQuery();
         //lendo os resultados
         while (leitor.next()) {
+            retorno.setMatricula_funcionario(leitor.getInt("matricula_funcionario"));
             retorno.setCpf(leitor.getString("Cpf"));
             retorno.setNome(leitor.getString("Nome"));
             retorno.setEmail(leitor.getString("Email"));

@@ -13,7 +13,7 @@ import java.sql.Date;
  */
 public class Aluno {
     
-    private int matricula;
+    private int matricula_aluno;
     private String nome;
     private String cpf;
     private String sexo;
@@ -29,17 +29,17 @@ public class Aluno {
     private Date nascimento;
     
     /**
-     * @return the matricula
+     * @return the matricula_aluno
      */
-    public int getMatricula() {
-        return matricula;
+    public int getMatricula_aluno() {
+        return matricula_aluno;
     }
 
     /**
-     * @param matricula the matricula to set
+     * @param matricula_aluno
      */
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
+    public void setMatricula_aluno(int matricula_aluno) {
+        this.matricula_aluno = matricula_aluno;
     }
 
     /**
