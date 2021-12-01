@@ -32,11 +32,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
+               
+                 <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaavaliacao.jsp">Avaliações</a>
                 </li>
             </ul>
         </nav>
