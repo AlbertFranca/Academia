@@ -22,6 +22,23 @@
         <link rel="stylesheet" href="css/globalcss.css">
         <title>Tela do recepcionista</title>
     <body>
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telarecepcao.jsp">Cadastros de Alunos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telagestao.jsp">Cadastro Funcionario</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaavaliacao.jsp">Avaliações</a>
+                </li>
+            </ul>
+        </nav>
         <style>
             p{
                 text-align: center;

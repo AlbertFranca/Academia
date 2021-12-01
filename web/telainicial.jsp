@@ -4,8 +4,8 @@
     Author     : islad
 --%>
 
-
 <%@page import="login.User"%>
+<%@page import="login.UserCRUD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
@@ -27,87 +27,49 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telarecepcao.jsp">Cadastros de Alunos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telagestao.jsp">Cadastro Funcionario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-            </li>     
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/WebAcademia/telaprofessor.jsp">Area do Professor</a>
-            </li>          
+                <a class="nav-link" href="http://localhost:8080/WebAcademia/telaavaliacao.jsp">Avaliações</a>
+            </li>
         </ul>
     </nav>
-    <form>
+    <form action="processarlogin.jsp" method="post">
         <div class="container col-sm-3 bg-dark text-white" style= "margin-top: 100px;">
             <div class="form-row">
                 <div class="col-sm-12">
                     <h1>Login</h1>
-                    <p> 
-                        <label for="nome">Informe seu login</label>
-                        <input id="email" name="email" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required"/>
-                    </p>
+                    <label for="email">Informe seu login</label>
+                    <input id="email" name="email" type="text" class="form-control" placeholder="ex. contato@htmlecsspro.com" required="required" value=""/>
+                </div>
 
-                    <p> 
-                        <label for="email">Informe senha</label>
-                        <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. senha" required="required" /> 
-                    </p>
+                <div class="col-sm-12">
+                    <label for="senha">Informe senha</label>
+                    <input id="senha" name="senha" type="password" class="form-control" placeholder="ex. senha" required="required" value=""/><br> 
+                </div>
 
-                    <p> 
-                        <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-                        <label for="manterlogado">Manter-me logado</label>
-                    </p>
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div> 
 
-                    <p> 
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </p>
-
-                    <p>
-                        Ainda não tem conta?
-                        <a href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastre-se</a>
-                    </p>
+                <div>
+                    Ainda não tem conta?
+                    <a href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastre-se</a>
                 </div>
             </div>
         </div>
-    </form>
-    <%
-// pagina jsp, que verifica se o que foi digitado no formulario login & senha est� correto. 
-//Essa pagina tem comunica��o com a classe .java(User) para verificar se aquele usuario existe no BD. 
-//Em caso positivo informa ao usuario que o login est� correto. 	
-	User us = new User();
-	String email = request.getParameter("email");
-	String senha = request.getParameter("senha");
-	boolean status = us.verificarUsuario(email, senha);
+    </div>
+</form>
 
-	if (us.result == true) {
-		out.println("Sucesso" + us.email);
-	} else {
-		out.println("Login ou Senha Invalidos");
-	}
-	%>;
-    
-  <%-- <%
- 
 
-//Em caso positivo informa ao usuario que o login est� correto. 	
-	Login login = new Login();
-	String email = request.getParameter("email");
-	String senha = request.getParameter("senha");
-	boolean status = login.verificarUsuario(email, senha);
 
-	if (login.result == true) {
-		out.println("Sucesso" + login.email);
-	} else {
-		out.println("Login ou Senha Invalidos");
-	}
-	%>; --%>
-  
 </body>
 
 </html>

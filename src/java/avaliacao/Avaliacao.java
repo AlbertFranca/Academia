@@ -287,6 +287,15 @@ public class Avaliacao {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
+    
+    public float getImc(){
+        float retorno = 0;
+        float altlocal = (float)this.altura;
+        float pesolocal = (float)this.peso;
+        retorno= (pesolocal)/((altlocal/100)*(altlocal/100));
+        return retorno;
+        
+    }
 
  
 }

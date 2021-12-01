@@ -20,6 +20,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">7
         <link rel="stylesheet" href="css/globalcss.css">
 
@@ -32,16 +34,14 @@
                     <a class="nav-link" href="http://localhost:8080/WebAcademia/telainicial.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastroaluno.jsp">Cadastro Aluno</a>
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telarecepcao.jsp">Cadastros de Alunos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/cadastrofuncionario.jsp">Cadastro Funcionario</a>
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telagestao.jsp">Cadastro Funcionario</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telausuario.jsp">Area do Aluno</a>
-                </li>
+                
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaavaliacao.jsp">Area do Professor</a>
+                    <a class="nav-link" href="http://localhost:8080/WebAcademia/telaavaliacao.jsp">Avaliações</a>
                 </li>
             </ul>
         </nav>

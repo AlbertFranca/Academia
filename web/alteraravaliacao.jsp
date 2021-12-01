@@ -33,6 +33,8 @@
             AvaliacaoCRUD dadosAv = new AvaliacaoCRUD();
             String idAvaliacao = request.getParameter("idAvaliacao");
             Avaliacao avaliacao = dadosAv.getAvaliacao(Integer.parseInt(idAvaliacao));
+            
+            
         %>
 
         <style>
@@ -88,10 +90,10 @@
                             <label for="peso">Peso:</label>
                             <input type="text" class="form-control" id="peso" name="peso" value="<%=avaliacao.getPeso()%>"> 
                         </div>
-                       <%-- <div class="col-sm-3">
+                       <div class="col-sm-3">
                             <label for="imc">Imc:</label>    
-                            <input type="text" class="form-control" id="imc" name="imc" disabled value= imc> 
-                        </div> --%>
+                            <input type="text" class="form-control" id="imc" name="imc" value="<%=avaliacao.getImc()%>"> 
+                        </div> 
                         <div class="col-sm-3">
                             <label for="pescoco">Pescoço:</label>
                             <input type="text" class="form-control" id="pescoco" name="pescoco" value="<%=avaliacao.getPescoco()%>"> 
@@ -249,7 +251,8 @@
                     window.location.href = "telaavaliacao.jsp";//tenho que colocar para onde voltar
                 }
             });
-              
+            
+    
             validarFormularioAvaliacao = function () {
                 var altura = document.getElementById('altura').value;
                 var peso = document.getElementById('peso').value;
